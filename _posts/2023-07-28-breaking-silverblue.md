@@ -69,7 +69,7 @@ Here is the advice I got when asking in the Fedora discord server:
 <details>
 <summary>
 
-### The actual solution
+The actual solution
 
 </summary>
 
