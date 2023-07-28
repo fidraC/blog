@@ -1,1 +1,3 @@
-My blog crap
+# My bullshit blog
+
+Mistakes I make
