@@ -1,6 +1,5 @@
 ---
 title: "Hello world"
-date: 2023-07-28T15:34:30-04:00
 categories:
   - blog
 tags:
