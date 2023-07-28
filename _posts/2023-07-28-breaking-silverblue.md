@@ -73,11 +73,35 @@ The actual solution
 
 </summary>
 
-According to Reddit and Fedora Discord:
+`sudo cp /usr/share/polkit-1/rules.d/org.projectatomic.rpmostree1.rules /etc/polkit-1/rules.d/`
 
-> Copy `/usr/share/polkit-1/rules.d/org.projectatomic.rpmostree1.rules` to `/etc/polkit-1/rules.d/` and edit there. It will override the default config.
+Edit `/etc/polkit-1/rules.d/org.projectatomic.rpmostree1.rules`
 
-Actual result: It doesn't work. I give up.
+```js
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.projectatomic.rpmostree1.repo-refresh" &&
+        subject.active == true && subject.local == true) {
+            return polkit.Result.YES;
+    }
+
+    if ((action.id == "org.projectatomic.rpmostree1.install-uninstall-packages" ||
+         action.id == "org.projectatomic.rpmostree1.install-local-packages" ||
+         action.id == "org.projectatomic.rpmostree1.override" ||
+         action.id == "org.projectatomic.rpmostree1.deploy" ||
+         action.id == "org.projectatomic.rpmostree1.rebase" ||
+         action.id == "org.projectatomic.rpmostree1.rollback" ||
+         action.id == "org.projectatomic.rpmostree1.bootconfig" ||
+         action.id == "org.projectatomic.rpmostree1.reload-daemon" ||
+         action.id == "org.projectatomic.rpmostree1.cancel" ||
+         action.id == "org.projectatomic.rpmostree1.cleanup" ||
+         action.id == "org.projectatomic.rpmostree1.client-management") &&
+        subject.active == true &&
+        subject.local == true &&
+        subject.isInGroup("wheel")) {
+            return polkit.Result.AUTH_ADMIN;
+    }
+});
+```
 
 </details>
 
