@@ -182,6 +182,9 @@ This shows the latest commit in fedora silverblue. Copy the latest commit.
 
 This will deploy the latest commit. However, the system will still be unusable. This will only fix one of the partitions.
 
+**Note:** If this doesn't work, try pulling from `fedora:fedora/38/x86_64/testing/silverblue`. After getting a working system, you can pull `fedora:fedora/38/x86_64/silverblue` again.
+{: .notice--warning}
+
 ```bash
 Validating refs...
 Validating refs in collections...
