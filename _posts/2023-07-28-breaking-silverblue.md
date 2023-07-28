@@ -16,13 +16,13 @@ This is the story of how I broke my Fedora Silverblue installation to the point 
 
 ## Background
 
-As anyone reading this blog should know, the `/usr` directory is a read-only partition managed by `ostree`, meaning that the user is **not** supposed to make **any** changes to it by hand. As everything is kept track by `ostree`, you can always roll back to the previous installation.
+As anyone reading this blog should know, the `/usr` directory is a read-only branch managed by `ostree`, meaning that the user is **not** supposed to make **any** changes to it by hand. As everything is kept track by `ostree`, you can always roll back to the previous installation.
 
 ## The Problem
 
 ![XKCD - Linux security](https://imgs.xkcd.com/comics/authorization_2x.png)
 
-The TL;DR is that I wanted to force `rpm-ostree` to require root. I don't understand why it doesn't by default considering it's writing to read-only partitions, but I digress.
+The TL;DR is that I wanted to force `rpm-ostree` to require root. I don't understand why it doesn't by default considering it's writing to read-only branches, but I digress.
 
 Permissions in Silverblue is managed by `polkit`. The config for `rpm-ostree` is located in `/usr/share/polkit-1/rules.d/org.projectatomic.rpmostree1.rules`. I thought that if I was able to edit the file, I would be able to modify permissions for `rpm-ostree`.
 
@@ -164,7 +164,9 @@ Hint: Some lines were ellipsized, use -l to show in full.
 error: Loading sysroot: exit status: 1
 ```
 
-I'm probably in the wrong but shouldn't the 2 partitions allow rollback when one of them is corrupted?
+~~I'm probably in the wrong but shouldn't the 2 branches allow rollback when one of them is corrupted?~~
+
+It's not 2 branches. It's two branches. I'm an idiot.
 
 ## My solution
 
@@ -180,7 +182,7 @@ This shows the latest commit in fedora silverblue. Copy the latest commit.
 
 `sudo ostree deploy <latest commit>`
 
-This will deploy the latest commit. However, the system will still be unusable. This will only fix one of the partitions.
+This will deploy the latest commit. However, the system will still be unusable. This will only fix one of the branches.
 
 **Note:** If this doesn't work, try pulling from `fedora:fedora/38/x86_64/testing/silverblue`. After getting a working system, you can pull `fedora:fedora/38/x86_64/silverblue` again.
 {: .notice--warning}
@@ -199,9 +201,9 @@ Now there's only 1 partial commit left.
 
 `reboot`
 
-Make sure you boot into the partition you just deployed.
+Make sure you boot into the branch you just deployed.
 
-Now, run `sudo ostree deploy <latest commit>` again. This will deploy the latest commit to the other partition.
+Now, run `sudo ostree deploy <latest commit>` again. This will deploy the latest commit to the other branch.
 
 `reboot`
 
