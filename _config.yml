@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Blog from a sleep deprived junior developer
 twitter_username: acheong08
 github_username: acheong08
-minimal_mistakes_skin: fark
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
