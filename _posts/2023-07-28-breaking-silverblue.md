@@ -164,9 +164,9 @@ Hint: Some lines were ellipsized, use -l to show in full.
 error: Loading sysroot: exit status: 1
 ```
 
-~~I'm probably in the wrong but shouldn't the 2 branches allow rollback when one of them is corrupted?~~
+~~I'm probably in the wrong but shouldn't the 2 partitions allow rollback when one of them is corrupted?~~
 
-It's not 2 branches. It's two branches. I'm an idiot.
+It's not 2 partitions. It's two branches. I'm an idiot.
 
 ## My solution
 
