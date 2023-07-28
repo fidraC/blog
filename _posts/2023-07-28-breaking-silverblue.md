@@ -66,12 +66,7 @@ Here is the advice I got when asking in the Fedora discord server:
 
 **DO NOT FOLLOW THIS ADVICE**
 
-<details>
-<summary>
-
-The actual solution
-
-</summary>
+## The actual solution
 
 `sudo cp /usr/share/polkit-1/rules.d/org.projectatomic.rpmostree1.rules /etc/polkit-1/rules.d/`
 
@@ -107,8 +102,6 @@ polkit.addRule(function (action, subject) {
   }
 });
 ```
-
-</details>
 
 ## Making things progressively worse
 
