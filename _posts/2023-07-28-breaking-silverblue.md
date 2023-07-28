@@ -78,28 +78,33 @@ The actual solution
 Edit `/etc/polkit-1/rules.d/org.projectatomic.rpmostree1.rules`
 
 ```js
-polkit.addRule(function(action, subject) {
-    if (action.id == "org.projectatomic.rpmostree1.repo-refresh" &&
-        subject.active == true && subject.local == true) {
-            return polkit.Result.YES;
-    }
+polkit.addRule(function (action, subject) {
+  if (
+    action.id == "org.projectatomic.rpmostree1.repo-refresh" &&
+    subject.active == true &&
+    subject.local == true
+  ) {
+    return polkit.Result.YES;
+  }
 
-    if ((action.id == "org.projectatomic.rpmostree1.install-uninstall-packages" ||
-         action.id == "org.projectatomic.rpmostree1.install-local-packages" ||
-         action.id == "org.projectatomic.rpmostree1.override" ||
-         action.id == "org.projectatomic.rpmostree1.deploy" ||
-         action.id == "org.projectatomic.rpmostree1.rebase" ||
-         action.id == "org.projectatomic.rpmostree1.rollback" ||
-         action.id == "org.projectatomic.rpmostree1.bootconfig" ||
-         action.id == "org.projectatomic.rpmostree1.reload-daemon" ||
-         action.id == "org.projectatomic.rpmostree1.cancel" ||
-         action.id == "org.projectatomic.rpmostree1.cleanup" ||
-         action.id == "org.projectatomic.rpmostree1.client-management") &&
-        subject.active == true &&
-        subject.local == true &&
-        subject.isInGroup("wheel")) {
-            return polkit.Result.AUTH_ADMIN;
-    }
+  if (
+    (action.id == "org.projectatomic.rpmostree1.install-uninstall-packages" ||
+      action.id == "org.projectatomic.rpmostree1.install-local-packages" ||
+      action.id == "org.projectatomic.rpmostree1.override" ||
+      action.id == "org.projectatomic.rpmostree1.deploy" ||
+      action.id == "org.projectatomic.rpmostree1.rebase" ||
+      action.id == "org.projectatomic.rpmostree1.rollback" ||
+      action.id == "org.projectatomic.rpmostree1.bootconfig" ||
+      action.id == "org.projectatomic.rpmostree1.reload-daemon" ||
+      action.id == "org.projectatomic.rpmostree1.cancel" ||
+      action.id == "org.projectatomic.rpmostree1.cleanup" ||
+      action.id == "org.projectatomic.rpmostree1.client-management") &&
+    subject.active == true &&
+    subject.local == true &&
+    subject.isInGroup("wheel")
+  ) {
+    return polkit.Result.AUTH_ADMIN;
+  }
 });
 ```
 
@@ -212,3 +217,5 @@ You now have a working system again.
 ## Conclusion
 
 Don't mess with the filesystem.
+
+When `rpm-ostree` breaks, `ostree` can fix it.
