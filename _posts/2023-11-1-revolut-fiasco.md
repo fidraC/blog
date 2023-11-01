@@ -21,12 +21,12 @@ For the past month, this has worked out perfectly. Every other day, I visit my n
 I buy the same foods every week: a pack of cheese, three packs of lettuce, and six eggs. On Tuesdays, Wednesdays, and Fridays, I buy a sandwich from Lidle.
 
 Today, on November 1st 2023, I did not buy a sandwich as I got free pizza from the university. To my surprise, I my card was declined. This is the first time that has ever happened to me.<br/>
-<img src="https://github.com/acheong08/blog/assets/36258159/85a981a3-66d1-4b67-8a74-a27a30b9d04f" height="500"/>
+<img src="https://github.com/acheong08/blog/assets/36258159/85a981a3-66d1-4b67-8a74-a27a30b9d04f" width="250"/>
 
 And so, I had no food for the night. Even as I'm writing this, I'm still starving.
 
 I have contacted support, and according to them, it might take up to 7 days until it is resolved. <br/>
-<img src="https://github.com/acheong08/blog/assets/36258159/8e9f17b8-f79d-46ec-81e8-505d26ab74ac" height="500"/>
+<img src="https://github.com/acheong08/blog/assets/36258159/8e9f17b8-f79d-46ec-81e8-505d26ab74ac" width="250"/>
 
 > ## The below segments are my my unfiltered thoughts and have yet to be properly reviewed by myself. I am hungry and can't think straight
 > ## It is likely that there are many mistakes.
