@@ -1,5 +1,5 @@
 ---
-title: "How to log into Cardiff University's eduroam Website"
+title: "How to log into Cardiff University's eduroam network"
 categories:
   - blog
 tags:
