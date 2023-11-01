@@ -8,6 +8,7 @@ tags:
   - crypto
   - revolut
 ---
+Cash is outdated. Online banking sucks. Crypto is a scam. We need something new
 
 # Context
 
