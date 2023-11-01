@@ -1,5 +1,5 @@
 ---
-title: "My Revolut fiasco and why there is a need for digital cash"
+title: "My Revolut fiasco and the need for digital cash"
 categories:
   - blog
 tags:
