@@ -37,4 +37,8 @@ Steps:
 
 The "User key password" is the certificate password from earlier.
 
+### Troublshooting
+
+In Fedora 39 and possibly above, there might be permission issues which the system does not tell you about. Open up `nm-connection-editor`, click the `eduroam` network, and it will automatically prompt you to fix it.
+
 If you have any questions, feel free to contact me via email: `CheongYX@cardiff.ac.uk`
